@@ -27,6 +27,12 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+    override fun onStart() {
+        super.onStart()
+        if(!haveThePermissionsBeenGranted(this)){
+            askForPermissions(this)
+        }
+    }
 }
 
 @Composable
